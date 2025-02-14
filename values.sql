@@ -1,0 +1,43 @@
+use banking_system;
+delete from Bank;
+delete from Branch;
+delete from Loan;
+delete from Customer_Borrows;
+delete from Staff_Borrows;
+delete from Payments;
+delete from Accounts;
+delete from Customer_Holds;
+delete from Staff_Holds;
+delete from Customer;
+delete from Staff;
+delete from Transactions;
+delete from Comments;
+delete from Feedback;
+insert into Bank values(1, 'Generic Bank');
+insert into Branch values(1,'123 B rd','Softcity',98765,'MI',2,'open',250000,'Softcity Branch',1);
+insert into Branch values(2, '456 A rd','Hardcity',12345,'MI',0,'closed',0,'Hardcity Branch',1);
+insert into Loan values(1,'car',30000,'open',0.029,1);
+insert into Loan values(2,'house',500000,'open',0.05,1);
+insert into Loan values(3,'personal',0,'closed',0.075,1);
+/* ask about date-time format */
+insert into Payments values(1,'1995-03-10','1:30',2875,3); 
+insert into Payments values(2,'1995-03-11','2:45',2875,3);
+insert into Accounts values(1,'checking',2000,'open',1);
+insert into Accounts values(2,'saving',4500,'open',1);
+insert into Accounts values(3,'checking',2750,'open',1);
+/* ask about DOB & phone format */
+insert into Customer values(1,'Bob','Dylan','234 C rd','Softcity',98765,'MI','1989-05-04','4158937756','bob_dylan4@aol.com','wetTacos123');
+insert into Customer values(2,'Frank','Bill','476 F rd','Softcity',98765,'MI','1992-12-07','4152368349','frankB01@hotmail.com','bananaPhone2002');
+insert into Staff values(1,'Mary','Ann','567 E rd','Hardcity',12345,'MI','1981-21-05','3124563287','anny81@yahoo.com',1,'Manager',80000,'rockSpring3976');
+insert into Staff values(2,'Hanna','Nill','743 H rd','Softcity',98765,'MI','11/03/1993','4156237890','nill24@gmail.com',1,'Teller',50000,'happyPasta7812');
+/*Moved insert statements for borrows and holds table*/
+insert into Customer_Borrows values(3,1);
+insert into Customer_Borrows values(2,2);
+insert into Staff_Borrows values(1,1);
+insert into Customer_Holds values(1,1);
+insert into Customer_Holds values(2,2);
+insert into Staff_Holds values(3,1);
+insert into Transactions values(1,'deposit','2012-04-12','11:20',200,1);
+insert into Transactions values(2,'deposit','2012-07-12','3:45',400,2);
+insert into Comments values(1,'Paid in quarters',1,'2012-04-12',2,1);
+insert into Feedback values(1,'Glad my quarters got accepted','2012-04-12',1);
